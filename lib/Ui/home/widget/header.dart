@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Welcome kerollos",
+              "Welcome Dear,",
               style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -43,23 +43,27 @@ class Header extends StatelessWidget {
                   Container(
                     height: 10,
                     width: 10,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                    ),
+                    decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
                   )
                 ]),
               ),
             ),
-            SizedBox(width: 10,),
-    Container(
-    height: 40,
-    width: 40,
-    decoration: const BoxDecoration(
-    color: kOptionColor,
-    borderRadius: BorderRadius.all(Radius.circular(10))),
-    child:Icon(Icons.person,color: Colors.white,)),
-    ],
+            const SizedBox(
+              width: 10,
+            ),
+            Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                    color: kOptionColor,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: const Icon(
+                  Icons.person,
+                  color: Colors.white,
+                )),
+          ],
         )
       ],
     );

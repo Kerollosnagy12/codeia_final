@@ -21,8 +21,6 @@ class CourseSearch extends StatelessWidget {
         contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         fillColor: Colors.white,
       ),
-
-
     );
   }
 }

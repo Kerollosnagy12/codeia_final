@@ -21,19 +21,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-routes: {
-       HomeScreen.routeName:(_)=>HomeScreen(),
-       RegisterScreen.routeName:(_)=>RegisterScreen(),
-  LoginScreen.routeName:(_)=>LoginScreen(),
-  CourseHome.routeName:(_)=>CourseHome(),
-},
-      //initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (_) => HomeScreen(),
+        RegisterScreen.routeName: (_) => RegisterScreen(),
+        LoginScreen.routeName: (_) => LoginScreen(),
+        CourseHome.routeName: (_) => CourseHome(),
+      },
+      initialRoute: HomeScreen.routeName,
       // initialRoute: HomeScreen.routeName,
-      initialRoute: CourseHome.routeName,
+      //initialRoute: CourseHome.routeName,
     );
   }
 }
