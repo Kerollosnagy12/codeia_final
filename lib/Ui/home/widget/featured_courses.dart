@@ -9,12 +9,12 @@ class FeaturedCoureses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Course> featuredCourseList = [
-      CourseDataProvider.courseList[9],
+      CourseDataProvider.courseList[12],
       CourseDataProvider.courseList[0],
       CourseDataProvider.courseList[1],
       CourseDataProvider.courseList[2],
       CourseDataProvider.courseList[10],
-      CourseDataProvider.courseList[5],
+      CourseDataProvider.courseList[9],
     ];
     return Column(
       children: [

@@ -106,9 +106,10 @@ class _LoginScreenState extends State<LoginScreen> {
       print(result.user?.uid);
     } on FirebaseAuthException catch (e) {
       DialogUtils.hideDialog(context);
-      print(e.code);
+
       if (e.code == FirebaseErrorCodes.UserNotfound ||
-          e.code == FirebaseErrorCodes.wrongPassword) {
+          e.code == FirebaseErrorCodes.wrongPassword ||
+          e.code == FirebaseErrorCodes.InvalidCredential) {
         DialogUtils.showMessage(context, 'Wrong E-mail Or Password');
       }
     }
