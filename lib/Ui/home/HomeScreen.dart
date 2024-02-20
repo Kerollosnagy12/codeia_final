@@ -1,7 +1,6 @@
-
-
 import 'package:codeia_final/Ui/REGISTER/RegisterScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,7 +19,12 @@ class _HomeScreenState extends State<HomeScreen> {
         Column(
           children: [
             const SizedBox(height: 30),
-            Image.asset('assets/images/logo1.png'),
+            Expanded(
+                child: Image.asset(
+              'assets/images/logo1.png',
+              width: 300.w,
+              height: 345.81.h,
+            )),
             const SizedBox(
               height: 62,
             ),
@@ -47,20 +51,22 @@ featuring video courses''',
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  nextpage.animateToPage(1,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeIn);
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff3062C8),
-                    minimumSize: Size.fromHeight(50)),
-                child: const Text('Next',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Baloo',
-                        color: Colors.white)),
+              child: Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    nextpage.animateToPage(1,
+                        duration: Duration(milliseconds: 700),
+                        curve: Curves.easeIn);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff3062C8),
+                      minimumSize: Size.fromHeight(50)),
+                  child: const Text('Next',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: 'Baloo',
+                          color: Colors.white)),
+                ),
               ),
             )
           ],
@@ -68,7 +74,12 @@ featuring video courses''',
         Column(
           children: [
             const SizedBox(height: 30),
-            Image.asset('assets/images/logo2.png'),
+            Expanded(
+                child: Image.asset(
+              'assets/images/logo2.png',
+              width: 300.w,
+              height: 345.81.h,
+            )),
             SizedBox(
               height: 62,
             ),
@@ -97,20 +108,22 @@ various digital platform and tools.''',
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  nextpage.animateToPage(2,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeIn);
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff3062C8),
-                    minimumSize: const Size.fromHeight(50)),
-                child: const Text('Next',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Baloo',
-                        color: Colors.white)),
+              child: Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    nextpage.animateToPage(2,
+                        duration: Duration(milliseconds: 700),
+                        curve: Curves.easeIn);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff3062C8),
+                      minimumSize: const Size.fromHeight(50)),
+                  child: const Text('Next',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: 'Baloo',
+                          color: Colors.white)),
+                ),
               ),
             )
           ],
@@ -118,7 +131,12 @@ various digital platform and tools.''',
         Column(
           children: [
             const SizedBox(height: 30),
-            Image.asset('assets/images/logo3.png'),
+            Expanded(
+                child: Image.asset(
+              'assets/images/logo3.png',
+              width: 300.w,
+              height: 345.81.h,
+            )),
             const SizedBox(
               height: 62,
             ),
@@ -148,18 +166,21 @@ and their learning paths.
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed: () {
- Navigator.pushReplacementNamed(context, RegisterScreen.routeName);
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff3062C8),
-                    minimumSize: const Size.fromHeight(50)),
-                child: const Text('Get Started',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Baloo',
-                        color: Colors.white)),
+              child: Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(
+                        context, RegisterScreen.routeName);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff3062C8),
+                      minimumSize: const Size.fromHeight(50)),
+                  child: const Text('Get Started',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: 'Baloo',
+                          color: Colors.white)),
+                ),
               ),
             )
           ],

@@ -8,6 +8,8 @@ class Course {
 
   final String _thumbnailUrl;
 
+  final String _thumbnailUrl2;
+
   final String _description;
 
   final String _createdBy;
@@ -32,6 +34,7 @@ class Course {
       this._id,
       this._title,
       this._thumbnailUrl,
+      this._thumbnailUrl2,
       this._description,
       this._createdBy,
       this._createdDate,
@@ -58,6 +61,8 @@ class Course {
   String get description => _description;
 
   String get thumbnailUrl => _thumbnailUrl;
+
+  String get thumbnailUrl2 => _thumbnailUrl2;
 
   String get title => _title;
 

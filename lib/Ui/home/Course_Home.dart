@@ -35,7 +35,7 @@ class CourseHome extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Header(),
+                        Expanded(child: Header()),
                         SizedBox(
                           height: 10,
                         ),

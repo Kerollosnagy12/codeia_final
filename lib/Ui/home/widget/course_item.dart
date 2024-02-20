@@ -1,6 +1,10 @@
+import 'package:codeia_final/Ui/details/course_details.dart';
+import 'package:codeia_final/arguments/course_argument.dart';
 import 'package:codeia_final/constants.dart';
 import 'package:codeia_final/model/course.dart';
+import 'package:codeia_final/route_Names.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CourseItem extends StatelessWidget {
   const CourseItem({super.key, required this.course});
@@ -17,24 +21,26 @@ class CourseItem extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           elevation: 5,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: InkWell(
             onTap: () {
               // click for course details
+              Navigator.pushNamed(context, RouteNames.courseDetails,
+                  arguments: CourseArgument(course));
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(course.thumbnailUrl),
+                Image.asset(course.thumbnailUrl, height: 100.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: EdgeInsets.all(1),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         course.title,
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 9,
                             fontWeight: FontWeight.bold,
                             color: Colors.grey.shade800),
                       ),
@@ -52,7 +58,7 @@ class CourseItem extends StatelessWidget {
                           ),
                           Text(
                             course.createdBy,
-                            style: TextStyle(fontSize: 12, color: kBlueColor),
+                            style: TextStyle(fontSize: 9, color: kBlueColor),
                           )
                         ],
                       ),

@@ -43,6 +43,16 @@ class CourseDataProvider {
       Lecture("Dart Fundamentals", "11:10 mins"),
       Lecture("Flutter App Basic", "07:40 mins"),
     ]),
+    Section("Intro to BackEnd", [
+      Lecture("Introduction to Back-End Devolpment", "17:20 mins"),
+      Lecture('Programming in Python', "17:20 mins"),
+      Lecture('Laravel-install', "17:20 mins"),
+      Lecture('Laravel-Structure', "17:20 mins"),
+      Lecture('Laravel-Routes', "17:20 mins"),
+      Lecture('APIS', "17:20 mins"),
+      Lecture('Laravel-controllers', "17:20 mins"),
+      Lecture('HTML & JavaScript', "17:20 mins"),
+    ])
   ];
 
   //Course List
@@ -50,6 +60,7 @@ class CourseDataProvider {
     Course(
         "0",
         "Flutter Master class",
+        "assets/images/course/programming1.png",
         "assets/images/course/programming1.png",
         "This complete flutter development course from beginner to expert. Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.",
         "Effortless Code Learning",
@@ -65,6 +76,7 @@ class CourseDataProvider {
         "1",
         "Flutter with Firebase",
         "assets/images/course/programming4.png",
+        "assets/images/course/programming4.png",
         "Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.",
         "Effortless Code Learning",
         "01-Apr-2022",
@@ -78,6 +90,7 @@ class CourseDataProvider {
     Course(
         "2",
         "Complete Web 3.0",
+        "assets/images/course/programming2.png",
         "assets/images/course/programming2.png",
         "Welcome to Become a Blockchain Developer with Ethereum and Solidity! This course is a complete introduction to decentralized application (Dapp) development.",
         "Perfect Academy",
@@ -93,6 +106,7 @@ class CourseDataProvider {
         "3",
         "Learn Programming Trick",
         "assets/images/course/programming3.png",
+        "assets/images/course/programming3.png",
         "One of the common and basic questions among students or someone who wants to learn code is “How can I learn to code fast and make a career as a programmer?”. Whether you are a student, fresher or experienced person trying to switch your job in programming you will definitely try to find tips and tricks to learn programming quickly and effectively",
         "Effortless Code Learning",
         "01-Jan-2022",
@@ -106,6 +120,7 @@ class CourseDataProvider {
     Course(
         "4",
         "Complete React Course",
+        "assets/images/course/programming5.png",
         "assets/images/course/programming5.png",
         "This course is fully up-to-date with React 18 (the latest version of React)!\nIt was completely updated and re-recorded from the ground up - it teaches the very latest version of React with all the core, modern features you need to know!",
         "Effortless Code Learning",
@@ -121,6 +136,7 @@ class CourseDataProvider {
         "5",
         "Learn Marketing",
         "assets/images/course/marketing1.png",
+        "assets/images/course/marketing1.png",
         "This is complete marketing master class. In this course, you will learn how to increase sales, approach new clients.",
         "ECL",
         "01-MAR-2022",
@@ -134,6 +150,7 @@ class CourseDataProvider {
     Course(
         "6",
         "Marketing MasterClass",
+        "assets/images/course/marketing2.png",
         "assets/images/course/marketing2.png",
         "You're looking for a complete digital marketing course to teach you everything you need to become a digital marketing expert, right?",
         "Effortless Code Learning",
@@ -149,6 +166,7 @@ class CourseDataProvider {
         "7",
         "How to Increase Sales",
         "assets/images/course/marketing3.png",
+        "assets/images/course/marketing3.png",
         "You're looking for a complete digital marketing course to teach you everything you need to become a digital marketing expert, right?",
         "Effortless Code Learning",
         "01-Apr-2022",
@@ -162,6 +180,7 @@ class CourseDataProvider {
     Course(
         "8",
         "Marketing Strategy",
+        "assets/images/course/marketing4.png",
         "assets/images/course/marketing4.png",
         "In this course, you will learn various marketing strategy",
         "Effortless Code Learning",
@@ -177,6 +196,7 @@ class CourseDataProvider {
         "9",
         "Invest Money Wisely",
         "assets/images/course/finance1.png",
+        "assets/images/course/finance1.png",
         "In this course, you will learn invest money wisely in various categories. Learn basic of capital market, other debt options.",
         "Effortless Code Learning",
         "15-Feb-2022",
@@ -190,6 +210,7 @@ class CourseDataProvider {
     Course(
         "10",
         "Crypto Technical Analysis",
+        "assets/images/course/finance2.png",
         "assets/images/course/finance2.png",
         "In this course, you will learn thorough crypto technical analysis. It will covers basic understanding on various crypto currencies. Volatility in crypto market.",
         "Effortless Code Learning",
@@ -205,6 +226,7 @@ class CourseDataProvider {
         "11",
         "All about Crypto",
         "assets/images/course/finance3.png",
+        "assets/images/course/finance3.png",
         "In this course, you will learn thorough crypto technical analysis. It will covers basic understanding on various crypto currencies. Volatility in crypto market.",
         "Effortless Code Learning",
         "20-Mar-2022",
@@ -219,8 +241,9 @@ class CourseDataProvider {
         "12",
         "Back-End Course",
         "assets/images/course/back_end.jpg",
-        "In this course, you will learn thorough crypto technical analysis. It will covers basic understanding on various crypto currencies. Volatility in crypto market.",
-        "Route Academy",
+        "assets/images/course/back_end.jpg",
+        "Backend development can be a fulfilling career choice for those with web development experience or who have a keen interest in development technologies. What is it exactly that a backend developer does, and how can you begin working towards earning the qualifications for this exciting career ",
+        "Conducted by Habiba Mohamed",
         "20-Mar-2022",
         4.8,
         false,
