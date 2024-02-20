@@ -1,17 +1,25 @@
+import 'package:codeia_final/FirebaseErrorCodes.dart';
+import 'package:codeia_final/Ui/DialogUtils.dart';
 import 'package:codeia_final/Ui/common/CustomFornFeild.dart';
+import 'package:codeia_final/Ui/home/Course_Home.dart';
 import 'package:codeia_final/ValidationUtils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const String routeName = 'login';
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
 
-TextEditingController email=TextEditingController();
-TextEditingController password=TextEditingController();
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController email = TextEditingController();
 
+  TextEditingController password = TextEditingController();
 
-var formKey=GlobalKey<FormState>();
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +31,7 @@ var formKey=GlobalKey<FormState>();
               fit: BoxFit.fill),
         ),
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.transparent,
           body: Container(
             padding: EdgeInsets.all(12),
@@ -32,7 +41,6 @@ var formKey=GlobalKey<FormState>();
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-
                   CustomFormField(
                       hint: 'Email',
                       keyboardType: TextInputType.emailAddress,
@@ -74,9 +82,35 @@ var formKey=GlobalKey<FormState>();
         ));
   }
 
-  void Login() {
-    if(formKey.currentState?.validate() == false){
-      return ;
+  void Login() async {
+    if (formKey.currentState?.validate() == false) {
+      return;
+    }
+    try {
+      DialogUtils.showLoading(
+        context,
+        'Loading...',
+        isCancelable: false,
+      );
+      final result = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email.text, password: password.text);
+      DialogUtils.hideDialog(context);
+      DialogUtils.showMessage(
+        context,
+        'User Logged In Successfully',
+        posActionTitle: 'ok',
+        posAction: () {
+          Navigator.pushReplacementNamed(context, CourseHome.routeName);
+        },
+      );
+      print(result.user?.uid);
+    } on FirebaseAuthException catch (e) {
+      DialogUtils.hideDialog(context);
+      print(e.code);
+      if (e.code == FirebaseErrorCodes.UserNotfound ||
+          e.code == FirebaseErrorCodes.wrongPassword) {
+        DialogUtils.showMessage(context, 'Wrong E-mail Or Password');
+      }
     }
   }
 }

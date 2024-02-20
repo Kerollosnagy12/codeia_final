@@ -1,14 +1,26 @@
+import 'package:codeia_final/FirebaseErrorCodes.dart';
 import 'package:codeia_final/Ui/Login/LoginScreen.dart';
 import 'package:codeia_final/Ui/common/CustomFornFeild.dart';
 import 'package:codeia_final/ValidationUtils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatelessWidget {
+import '../DialogUtils.dart';
+
+class RegisterScreen extends StatefulWidget {
   static const String routeName = 'register';
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController fullname = TextEditingController();
+
   TextEditingController email = TextEditingController();
+
   TextEditingController password = TextEditingController();
+
   TextEditingController passwordConfirmation = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
@@ -23,6 +35,7 @@ class RegisterScreen extends StatelessWidget {
               fit: BoxFit.fill),
         ),
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.transparent,
           body: Container(
             padding: EdgeInsets.all(12),
@@ -112,9 +125,40 @@ class RegisterScreen extends StatelessWidget {
         ));
   }
 
-  void createAccount() {
+  void createAccount() async {
     if (formKey.currentState?.validate() == false) {
       return;
+    }
+    try {
+      DialogUtils.showLoading(
+        context,
+        'Loading...',
+        isCancelable: false,
+      );
+      var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: email.text, password: password.text);
+      DialogUtils.showMessage(
+        context,
+        'Registered Successfully',
+        posActionTitle: 'ok',
+        posAction: () {
+          Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+        },
+      );
+    } on FirebaseAuthException catch (e) {
+      DialogUtils.hideDialog(context);
+      if (e.code == FirebaseErrorCodes.weakPassword) {
+        DialogUtils.showMessage(context, 'The password provided is too weak.');
+      } else if (e.code == FirebaseErrorCodes.emailInuse) {
+        DialogUtils.showMessage(
+          context,
+          'The account already exists for that email.',
+          posActionTitle: 'ok',
+          posAction: () {},
+        );
+      }
+    } catch (e) {
+      DialogUtils.showMessage(context, "Something Went Wrong");
     }
   }
 }
