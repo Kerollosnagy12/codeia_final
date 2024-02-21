@@ -3,6 +3,7 @@ import 'package:codeia_final/Ui/REGISTER/RegisterScreen.dart';
 import 'package:codeia_final/Ui/details/course_details.dart';
 import 'package:codeia_final/Ui/home/Course_Home.dart';
 import 'package:codeia_final/Ui/home/HomeScreen.dart';
+import 'package:codeia_final/Ui/home/widget/chatbot_screen.dart';
 import 'package:codeia_final/arguments/course_argument.dart';
 import 'package:codeia_final/route_Names.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
           RegisterScreen.routeName: (_) => RegisterScreen(),
           LoginScreen.routeName: (_) => LoginScreen(),
           CourseHome.routeName: (_) => CourseHome(),
+          ChatScreen.routeName: (_) => ChatScreen(),
         },
         initialRoute: HomeScreen.routeName,
         onGenerateRoute: (settings) {

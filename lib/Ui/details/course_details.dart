@@ -62,7 +62,7 @@ class CourseDetails extends StatelessWidget {
                   ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(course.thumbnailUrl)),
-                  Column(
+                  const Column(
                     children: [
                       Icon(
                         Icons.play_arrow,
@@ -88,7 +88,7 @@ class CourseDetails extends StatelessWidget {
                     children: [
                       Text(
                         course.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
@@ -108,8 +108,8 @@ class CourseDetails extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Icon(Icons.play_circle_outline),
-                              SizedBox(
+                              const Icon(Icons.play_circle_outline),
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -118,13 +118,13 @@ class CourseDetails extends StatelessWidget {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Row(
                             children: [
-                              Icon(Icons.access_time),
-                              SizedBox(
+                              const Icon(Icons.access_time),
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -133,17 +133,17 @@ class CourseDetails extends StatelessWidget {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.star,
                                 size: 25,
                                 color: Colors.yellow,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -160,20 +160,20 @@ class CourseDetails extends StatelessWidget {
                         trimMode: TrimMode.Line,
                         trimCollapsedText: "Show more",
                         trimExpandedText: "Show Less",
-                        moreStyle: TextStyle(
+                        moreStyle: const TextStyle(
                             color: kPrimaryColor, fontWeight: FontWeight.bold),
-                        lessStyle: TextStyle(
+                        lessStyle: const TextStyle(
                             color: kPrimaryColor, fontWeight: FontWeight.bold),
                         style: TextStyle(
                             fontSize: 15, color: Colors.grey.shade500),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Course Content",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
@@ -190,7 +190,7 @@ class CourseDetails extends StatelessWidget {
                       ListView.builder(
                         shrinkWrap: true,
                         itemCount: course.sections.length,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
                           return buildCourseContent(index);
                         },
@@ -208,10 +208,11 @@ class CourseDetails extends StatelessWidget {
 
   Widget buildCourseContent(int index) {
     Section section = course.sections[index];
+
     return ExpansionTile(
       title: Text(
         'Section ${index + 1} - ${section.name}',
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
       children: section.lectures.map((lecture) {
         return ListTile(

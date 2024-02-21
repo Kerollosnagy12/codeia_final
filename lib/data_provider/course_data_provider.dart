@@ -8,42 +8,20 @@ class CourseDataProvider {
 
   //Section List
   static List<Section> sectionList = [
-    Section("Introduction", [
+    Section(0, "Introduction", [
       Lecture("Introduction", "01:48 mins"),
       Lecture("What is Flutter", "05:54 mins"),
       Lecture("Understanding Flutter Architecture", "04:45 mins"),
       Lecture("Flutter Alternatives", "06:10 mins"),
     ]),
-    Section("Flutter Basics", [
+    Section(0, "Flutter Basics", [
       Lecture("Module Introduction", "02:25 mins"),
       Lecture("Creating New Project", "05:17 mins"),
       Lecture("Dart Basics", "17:20 mins"),
       Lecture("Dart Fundamentals", "11:10 mins"),
       Lecture("Flutter App Basic", "07:40 mins"),
     ]),
-    Section("Layouts", [
-      Lecture("Module Introduction", "02:25 mins"),
-      Lecture("Creating New Project", "05:17 mins"),
-      Lecture("Flutter App Basic", "07:40 mins"),
-    ]),
-    Section("Responsive & Adaptive UI", [
-      Lecture("Module Introduction", "02:25 mins"),
-      Lecture("Dart Basics", "17:20 mins"),
-      Lecture("Dart Fundamentals", "11:10 mins"),
-      Lecture("Flutter App Basic", "07:40 mins"),
-    ]),
-    Section("Builing Real App", [
-      Lecture("Module Introduction", "02:25 mins"),
-      Lecture("Creating New Project", "05:17 mins"),
-      Lecture("Flutter App Basic", "07:40 mins"),
-    ]),
-    Section("Responsive & Adaptive UI", [
-      Lecture("Module Introduction", "02:25 mins"),
-      Lecture("Dart Basics", "17:20 mins"),
-      Lecture("Dart Fundamentals", "11:10 mins"),
-      Lecture("Flutter App Basic", "07:40 mins"),
-    ]),
-    Section("Intro to BackEnd", [
+    Section(12, "Intro to BackEnd", [
       Lecture("Introduction to Back-End Devolpment", "17:20 mins"),
       Lecture('Programming in Python', "17:20 mins"),
       Lecture('Laravel-install', "17:20 mins"),
@@ -71,7 +49,8 @@ class CourseDataProvider {
         100,
         '2.5 Hours',
         15,
-        sectionList),
+        sectionList,
+        0),
     Course(
         "1",
         "Flutter with Firebase",
@@ -86,7 +65,8 @@ class CourseDataProvider {
         50,
         '3 Hours',
         10,
-        sectionList),
+        sectionList,
+        1),
     Course(
         "2",
         "Complete Web 3.0",
@@ -101,7 +81,8 @@ class CourseDataProvider {
         75,
         '2.7 Hours',
         15,
-        sectionList),
+        sectionList,
+        2),
     Course(
         "3",
         "Learn Programming Trick",
@@ -116,7 +97,8 @@ class CourseDataProvider {
         40,
         '5 Hours',
         30,
-        sectionList),
+        sectionList,
+        3),
     Course(
         "4",
         "Complete React Course",
@@ -131,7 +113,8 @@ class CourseDataProvider {
         120,
         '4.3 Hours',
         25,
-        sectionList),
+        sectionList,
+        4),
     Course(
         "5",
         "Learn Marketing",
@@ -146,7 +129,8 @@ class CourseDataProvider {
         150,
         '4 Hours',
         20,
-        sectionList),
+        sectionList,
+        5),
     Course(
         "6",
         "Marketing MasterClass",
@@ -161,7 +145,8 @@ class CourseDataProvider {
         80,
         '4.2 Hours',
         21,
-        sectionList),
+        sectionList,
+        6),
     Course(
         "7",
         "How to Increase Sales",
@@ -176,7 +161,8 @@ class CourseDataProvider {
         100,
         '4.5 Hours',
         20,
-        sectionList),
+        sectionList,
+        7),
     Course(
         "8",
         "Marketing Strategy",
@@ -191,10 +177,11 @@ class CourseDataProvider {
         120,
         '3.5 Hours',
         32,
-        sectionList),
+        sectionList,
+        8),
     Course(
         "9",
-        "Invest Money Wisely",
+        "Invest money",
         "assets/images/course/finance1.png",
         "assets/images/course/finance1.png",
         "In this course, you will learn invest money wisely in various categories. Learn basic of capital market, other debt options.",
@@ -206,7 +193,8 @@ class CourseDataProvider {
         100,
         '6 Hours',
         35,
-        sectionList),
+        sectionList,
+        9),
     Course(
         "10",
         "Crypto Technical Analysis",
@@ -221,7 +209,8 @@ class CourseDataProvider {
         90,
         '3 Hours',
         22,
-        sectionList),
+        sectionList,
+        10),
     Course(
         "11",
         "All about Crypto",
@@ -236,7 +225,8 @@ class CourseDataProvider {
         75,
         '3.5 Hours',
         28,
-        sectionList),
+        sectionList,
+        11),
     Course(
         "12",
         "Back-End Course",
@@ -251,6 +241,23 @@ class CourseDataProvider {
         75,
         '3.5 Hours',
         28,
-        sectionList),
+        sectionList,
+        12),
+    Course(
+        "13",
+        "Ai Course",
+        "assets/images/course/AiCourse.jpg",
+        "assets/images/course/AiCourse.jpg",
+        "Backend development can be a fulfilling career choice for those with web development experience or who have a keen interest in development technologies. What is it exactly that a backend developer does, and how can you begin working towards earning the qualifications for this exciting career ",
+        "Route Academy",
+        "20-Mar-2022",
+        4.8,
+        false,
+        CourseCategory.finance,
+        150,
+        '3.5 Hours',
+        28,
+        sectionList,
+        13),
   ];
 }

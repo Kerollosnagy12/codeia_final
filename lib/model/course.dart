@@ -29,22 +29,25 @@ class Course {
   final int _lessonNo;
 
   final List<Section> _sections;
+  final int _idSection;
 
   Course(
-      this._id,
-      this._title,
-      this._thumbnailUrl,
-      this._thumbnailUrl2,
-      this._description,
-      this._createdBy,
-      this._createdDate,
-      this._rate,
-      this._isFavorite,
-      this._courseCategory,
-      this._price,
-      this._duration,
-      this._lessonNo,
-      this._sections);
+    this._id,
+    this._title,
+    this._thumbnailUrl,
+    this._thumbnailUrl2,
+    this._description,
+    this._createdBy,
+    this._createdDate,
+    this._rate,
+    this._isFavorite,
+    this._courseCategory,
+    this._price,
+    this._duration,
+    this._lessonNo,
+    this._sections,
+    this._idSection,
+  );
 
   bool get isFavorite => _isFavorite;
 
@@ -77,4 +80,6 @@ class Course {
   int get lessonNo => _lessonNo;
 
   List<Section> get sections => _sections;
+
+  int get idSection => _idSection;
 }

@@ -1,3 +1,4 @@
+import 'package:codeia_final/Ui/home/widget/chatBot.dart';
 import 'package:codeia_final/component/bottom_options.dart';
 import 'package:codeia_final/Ui/home/widget/Cousre_Search.dart';
 import 'package:codeia_final/Ui/home/widget/category_course_list.dart';
@@ -9,6 +10,7 @@ import 'package:codeia_final/Ui/home/widget/offers.dart';
 import 'package:codeia_final/component/shopping_cart_option.dart';
 import 'package:codeia_final/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CourseHome extends StatelessWidget {
   static const String routeName = 'coursehome';
@@ -47,20 +49,29 @@ class CourseHome extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Offers(),
                     FeaturedCoureses(),
                     CategoryCourseList(),
+                    SizedBox(
+                      height: 10,
+                    )
                   ],
                 ),
-              )
+              ),
+              Container(
+                  height: 100.h,
+                  width: 100.w,
+                  margin: EdgeInsets.only(left: 355, bottom: 200),
+                  alignment: Alignment.topLeft,
+                  child: ChatBot()),
             ],
           ),
         ),
       ),
       floatingActionButton: ShoppingCartOption(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: BottomOptions(
         selectedIndex: 1,
       ),

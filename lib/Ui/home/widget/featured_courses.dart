@@ -10,11 +10,11 @@ class FeaturedCoureses extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Course> featuredCourseList = [
       CourseDataProvider.courseList[12],
+      CourseDataProvider.courseList[13],
       CourseDataProvider.courseList[0],
       CourseDataProvider.courseList[1],
       CourseDataProvider.courseList[2],
       CourseDataProvider.courseList[10],
-      CourseDataProvider.courseList[9],
     ];
     return Column(
       children: [
