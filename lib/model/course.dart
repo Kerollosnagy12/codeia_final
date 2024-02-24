@@ -1,4 +1,5 @@
 import 'package:codeia_final/model/course_category.dart';
+import 'package:codeia_final/model/roadMap.dart';
 import 'package:codeia_final/model/section.dart';
 
 class Course {
@@ -8,9 +9,12 @@ class Course {
 
   final String _thumbnailUrl;
 
-  final String _thumbnailUrl2;
+  final String _road1;
+  final String _road2;
+  final String _road3;
 
   final String _description;
+  final String _learning;
 
   final String _createdBy;
 
@@ -28,15 +32,19 @@ class Course {
 
   final int _lessonNo;
 
-  final List<Section> _sections;
+  final List<Section> sections;
+  final List<Roadmap> roadmaps;
   final int _idSection;
 
   Course(
     this._id,
     this._title,
     this._thumbnailUrl,
-    this._thumbnailUrl2,
+    this._road1,
+    this._road2,
+    this._road3,
     this._description,
+    this._learning,
     this._createdBy,
     this._createdDate,
     this._rate,
@@ -45,8 +53,9 @@ class Course {
     this._price,
     this._duration,
     this._lessonNo,
-    this._sections,
+    this.sections,
     this._idSection,
+    this.roadmaps,
   );
 
   bool get isFavorite => _isFavorite;
@@ -63,9 +72,15 @@ class Course {
 
   String get description => _description;
 
+  String get learning => _learning;
+
   String get thumbnailUrl => _thumbnailUrl;
 
-  String get thumbnailUrl2 => _thumbnailUrl2;
+  String get road1 => _road1;
+
+  String get road2 => _road2;
+
+  String get road3 => _road3;
 
   String get title => _title;
 
@@ -79,7 +94,6 @@ class Course {
 
   int get lessonNo => _lessonNo;
 
-  List<Section> get sections => _sections;
 
   int get idSection => _idSection;
 }

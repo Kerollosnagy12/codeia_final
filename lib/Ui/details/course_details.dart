@@ -1,4 +1,5 @@
 import 'package:codeia_final/Ui/details/widget/favorite_option.dart';
+import 'package:codeia_final/Ui/details/widget/roadmap.dart';
 import 'package:codeia_final/constants.dart';
 import 'package:codeia_final/model/course.dart';
 import 'package:codeia_final/model/section.dart';
@@ -17,7 +18,6 @@ class CourseDetails extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -154,6 +154,9 @@ class CourseDetails extends StatelessWidget {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       ReadMoreText(
                         course.description,
                         trimLines: 2,
@@ -168,8 +171,32 @@ class CourseDetails extends StatelessWidget {
                             fontSize: 15, color: Colors.grey.shade500),
                       ),
                       const SizedBox(
-                        width: 20,
+                        height: 20,
                       ),
+                      const Text(
+                        "What you 'll learn",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            course.learning,
+                            style: TextStyle(fontSize: 17),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 15),
+                      const Text(
+                        'Roadmap:',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Roadmap(course: course),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
